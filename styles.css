@@ -1,0 +1,184 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d4d4df;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Calculator container */
+.calculator {
+  background: #161620;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.702);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Display */
+#display {
+  background-color: #373c7d;
+  width: 100%;
+  height: 70px;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 5px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2rem;
+  overflow-x: auto;
+  word-wrap: break-word;
+  text-align: right;
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+}
+
+/* General button */
+.btn {
+  background: #43434f;
+  border: none;
+  height: 45px;
+  border-radius: 35px;
+  color: #fff;
+  font-size: x-large;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Grid 1 numbers */
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Grid 2 operators */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Equal button style */
+.equal {
+  grid-column: span 2;
+  background-color: rgb(136, 129, 129);
+  color: black;
+}
+
+/* Operator buttons style */
+.operator {
+  background-color: #f5a623;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+/* Clear button */
+#clear {
+  width: 65px;
+  background-color: crimson;
+}
+
+/* History container */
+.history-container {
+  display: none;
+  margin-top: 2rem;
+  background-color: #22223b;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.history-container h3 {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#history-list {
+  list-style: none;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+#history-list li {
+  padding: 5px;
+  border-bottom: 1px solid #444;
+  font-size: 0.9rem;
+}
+
+/* Toggle History button */
+#toggle-history {
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+#toggle-history:hover {
+  background-color: #666;
+}
+
+/* Clear History button */
+#clear-history {
+  margin-top: 10px;
+  padding: 0.4rem 1rem;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+#clear-history:hover {
+  background-color: darkred;
+}
+
+/* Responsive adjustments */
+@media (max-width: 31.25rem) {
+  .calculator {
+    padding: 1rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  #display {
+    font-size: 1.5rem;
+  }
+}
